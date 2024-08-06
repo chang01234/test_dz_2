@@ -1,0 +1,27 @@
+title = "build configuration file"
+
+[repo]
+pid = "SW0000"
+project_name = "sw0000_folder_template"
+version = "v0.0.1"
+suffix = "beta"
+boot_pid = "SW0000"
+boot_version = "v0.0.1"
+jlink_micro = "MKV46F256xxx16"
+
+[gen]
+database_version = "v0.0.1" # optional, defaults to [major.minor] if empty
+code_folder = "gen"
+pimage_name = "gen_pimage"
+config_name = "gen_config"
+faults_name = "gen_fault"
+ext_src = ".c"
+ext_head = ".h"
+pimage_csv_name = "pimage"
+config_csv_name = "config"
+fault_csv_name = "fault"
+
+# this data was previously stored in a Burner.bbl file
+[memory]
+app_start_addr = 0x00004000                # address where the application is in memory
+field_flashing_app_start_addr = 0x00020000 # address where we want to load the field flashing s19 when doing field update

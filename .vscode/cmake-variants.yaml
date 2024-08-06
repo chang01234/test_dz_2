@@ -1,0 +1,11 @@
+buildType:
+  default: debug
+  choices:
+      debug:
+        short: debug
+        long: build binary optimized for debug
+        buildType: debug
+      release:
+        short: release
+        long: build binary optimized for speed
+        buildType: release

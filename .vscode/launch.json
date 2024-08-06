@@ -1,0 +1,40 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "JLink Debugger",
+            "type": "cortex-debug",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "executable": "./build/debug/${env:PROJECT_NAME}.elf",
+            "device": "${env:JLINK_MICRO}",
+            "runToEntryPoint": "main",
+            "svdFile": "${workspaceFolder}/MKV46F16/MKV46F16.svd",
+            "showDevDebugOutput": "vscode",
+            "internalConsoleOptions": "openOnSessionStart",
+            "liveWatch": {
+                "enabled": true,
+                "samplesPerSecond": 4
+            },
+            "linux": {
+                "servertype": "external",
+                "gdbTarget": "host.docker.internal:50000",
+                "overrideLaunchCommands": [
+                    "monitor halt",
+                    "monitor reset", // This line may be optional, but safer
+                    "-target-download",
+                    "monitor reset" // You can use an optional reset-type but default is 0
+                ],
+                "overrideResetCommands": [
+                    "monitor reset",
+                ],
+                "overrideRestartCommands": [
+                    "monitor reset",
+                ]
+            }
+        }
+    ]
+}

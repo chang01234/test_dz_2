@@ -1,0 +1,6 @@
+# default to LF file ending
+* text=auto eol=lf
+
+# except for windows-specific files
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf

@@ -1,0 +1,7 @@
+/build/
+/.settings/
+/.venv/
+/*.launch
+.vscode/.cortex-debug.peripherals.state.json
+.vscode/.cortex-debug.registers.state.json
+tools/build/__pycache__/
